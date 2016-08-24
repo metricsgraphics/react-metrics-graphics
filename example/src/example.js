@@ -28,7 +28,6 @@ class App extends React.Component {
 					y_accessor="value"
 				/>
 
-
 				<div className="exampleToolBox">
 					<button className="isimple-btn" onClick={this.changeDateRange.bind(this,minDate,new Date("2014-01-15")) }>
 						Set Max Date to 1/15/2014
