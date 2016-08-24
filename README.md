@@ -27,6 +27,10 @@ You can also use the standalone build by including `dist/react-metrics-graphics.
 npm install react-metrics-graphics --save
 ```
 
+__Also ensure to include the standard MetricsGraphics.js stylesheet to the head of your HTML doc__
+```
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.10.1/metricsgraphics.min.css">
+``` 
 
 ## Usage
 
@@ -45,6 +49,8 @@ import MetricsGraphics from 'react-metrics-graphics';
 	y_accessor="value"
 />
 ```
+
+__Add add the following style
 
 ### Properties
 
