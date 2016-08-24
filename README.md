@@ -1,6 +1,6 @@
 # MetricsGraphics React Component
 
-__A react component wrapper for the popular vizualization library, [MetricsGraphics.js](https://github.com/mozilla/metrics-graphics)__
+__A react component thats wraps the popular visualization library, [MetricsGraphics.js](https://github.com/mozilla/metrics-graphics)__
 
 
 ## Demo & Examples
