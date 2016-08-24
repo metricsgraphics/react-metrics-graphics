@@ -1,0 +1,53 @@
+{
+  "name": "react-metrics-graphics",
+  "version": "1.0.0",
+  "description": "MetricsGraphics",
+  "main": "lib/MetricsGraphics.js",
+  "author": "Carter Feldman",
+  "homepage": "https://github.com/cf/react-metrics-graphics",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cf/react-metrics-graphics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cf/react-metrics-graphics/issues"
+  },
+  "dependencies": {
+    "classnames": "^2.1.2",
+    "jquery": "^3.1.0",
+    "metrics-graphics": "^2.10.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.3",
+    "eslint": "^1.6.0",
+    "eslint-plugin-react": "^3.5.1",
+    "gulp": "^3.9.0",
+    "react": "^0.14.0",
+    "react-component-gulp-tasks": "^0.7.6",
+    "react-dom": "^0.14.0"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-0"
+  },
+  "browserify-shim": {
+    "react": "global:React"
+  },
+  "scripts": {
+    "build": "gulp clean && NODE_ENV=production gulp build",
+    "examples": "gulp dev:server",
+    "lint": "eslint ./; true",
+    "publish:site": "NODE_ENV=production gulp publish:examples",
+    "release": "NODE_ENV=production gulp release",
+    "start": "gulp dev",
+    "test": "echo \"no tests yet\" && exit 0",
+    "watch": "gulp watch:lib"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "metrics-graphics",
+    "chart",
+    "graph",
+    "metricsgraphics"
+  ]
+}

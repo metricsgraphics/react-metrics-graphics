@@ -1,0 +1,29 @@
+{
+  "name": "react-metrics-graphics",
+  "version": "0.0.0",
+  "description": "MetricsGraphics",
+  "main": "dist/react-metrics-graphics.min.js",
+  "homepage": "https://github.com/cf/react-metrics-graphics",
+  "authors": [
+    "Carter Feldman"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "package.json",
+    "src",
+    "node_modules",
+    "example",
+    "test"
+  ]
+}
