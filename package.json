@@ -5,6 +5,7 @@
   "main": "lib/MetricsGraphics.js",
   "author": "Carter Feldman",
   "homepage": "https://github.com/cf/react-metrics-graphics",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/cf/react-metrics-graphics.git"
@@ -49,6 +50,5 @@
     "chart",
     "graph",
     "metricsgraphics"
-  ],
-  "license": "MIT"
+  ]
 }
