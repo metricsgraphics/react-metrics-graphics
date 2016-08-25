@@ -2,33 +2,27 @@
 
 __A react component thats wraps the popular visualization library, [MetricsGraphics.js](https://github.com/mozilla/metrics-graphics)__
 
+[![npm](https://img.shields.io/npm/l/react-metrics-graphics.svg?maxAge=2592000)](https://github.com/cf/react-metrics-graphics)
+[![npm](https://img.shields.io/npm/v/react-metrics-graphics.svg?maxAge=2592000)](https://www.npmjs.com/package/react-metrics-graphics)
 
 ## Demo & Examples
 
 Live demo: [cf.github.io/react-metrics-graphics](http://cf.github.io/react-metrics-graphics/)
-
-To build the examples locally, run:
-
-```
-npm install
-npm start
-```
-
-Then open [`localhost:8000`](http://localhost:8000) in a browser.
 
 
 ## Installation
 
 The easiest way to use react-metrics-graphics is to install it from NPM and include it in your own React build process (using [Browserify](http://browserify.org), [Webpack](http://webpack.github.io/), etc).
 
-You can also use the standalone build by including `dist/react-metrics-graphics.js` in your page. If you use this, make sure you have already included React, and it is available as a global variable.
-
 ```
 npm install react-metrics-graphics --save
 ```
 
+You can also use the standalone build by including `dist/react-metrics-graphics.js` in your page. If you use this, make sure you have already included React, and it is available as a global variable.
+
+
 __Also ensure to include the standard MetricsGraphics.js stylesheet to the head of your HTML doc__
-```
+```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.10.1/metricsgraphics.min.css">
 ``` 
 
@@ -36,7 +30,7 @@ __Also ensure to include the standard MetricsGraphics.js stylesheet to the head 
 
 __Simply add the react component MetricsGraphics, and pass it any number of the [standard MetricGraphics.js options](https://github.com/mozilla/metrics-graphics/wiki/List-of-Options/80e9459ecb80f001ccbaec5cc58e7ca37a8851cc) as component attributes__
 
-```
+```jsx
 import MetricsGraphics from 'react-metrics-graphics';
 
 <MetricsGraphics
@@ -50,7 +44,6 @@ import MetricsGraphics from 'react-metrics-graphics';
 />
 ```
 
-__Add add the following style
 
 ### Properties
 
@@ -168,6 +161,16 @@ Make sure to include the MetricsGraphics css file in your react app:
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.10.1/metricsgraphics.min.css">
 ``` 
 
+## Demo & Examples
+
+To build the examples locally, run:
+
+```bash
+npm install
+npm start
+```
+
+Then open [`localhost:8000`](http://localhost:8000) in a browser.
 
 ## Development (`src`, `lib` and the build process)
 
