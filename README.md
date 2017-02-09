@@ -23,7 +23,7 @@ You can also use the standalone build by including `dist/react-metrics-graphics.
 
 __Also ensure to include the standard MetricsGraphics.js stylesheet to the head of your HTML doc__
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.10.1/metricsgraphics.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.11.0/metricsgraphics.min.css">
 ``` 
 
 ## Usage
@@ -158,7 +158,7 @@ import MetricsGraphics from 'react-metrics-graphics';
 ### Notes
 Make sure to include the MetricsGraphics css file in your react app:
 ```
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.10.1/metricsgraphics.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.11.0/metricsgraphics.min.css">
 ``` 
 
 ## Demo & Examples

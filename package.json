@@ -1,6 +1,6 @@
 {
   "name": "react-metrics-graphics",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "A react component thats wraps the popular visualization library, MetricsGraphics.js",
   "main": "lib/MetricsGraphics.js",
   "author": "Carter Feldman",
@@ -16,7 +16,7 @@
   "dependencies": {
     "classnames": "^2.1.2",
     "jquery": "^3.1.0",
-    "metrics-graphics": "^2.10.1"
+    "metrics-graphics": "^2.11.0"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.3",
