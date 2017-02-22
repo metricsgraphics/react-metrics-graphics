@@ -1,12 +1,12 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.MetricsGraphics = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-// https://d3js.org Version 4.5.0. Copyright 2017 Mike Bostock.
+// https://d3js.org Version 4.6.0. Copyright 2017 Mike Bostock.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
 	(factory((global.d3 = global.d3 || {})));
 }(this, (function (exports) { 'use strict';
 
-var version = "4.5.0";
+var version = "4.6.0";
 
 var ascending = function(a, b) {
   return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
@@ -6875,8 +6875,10 @@ function linePoint(lambda, phi) {
       }
     }
   } else {
-    boundsPoint(lambda, phi);
+    ranges.push(range = [lambda0$1 = lambda, lambda1 = lambda]);
   }
+  if (phi < phi0) phi0 = phi;
+  if (phi > phi1) phi1 = phi;
   p0 = p, lambda2 = lambda;
 }
 
@@ -7076,7 +7078,7 @@ function centroidRingPoint(lambda, phi) {
       cz = x0 * y - y0 * x,
       m = sqrt(cx * cx + cy * cy + cz * cz),
       u = x0 * x + y0 * y + z0 * z,
-      v = m && -acos(u) / m, // area weight
+      v = m && -asin(m) / m, // area weight
       w = atan2(m, u); // line weight
   X2 += v * cx;
   Y2 += v * cy;
@@ -8054,6 +8056,46 @@ PathContext.prototype = {
   result: noop$1
 };
 
+var lengthSum$1 = adder();
+var lengthRing;
+var x00$2;
+var y00$2;
+var x0$4;
+var y0$4;
+
+var lengthStream$1 = {
+  point: noop$1,
+  lineStart: function() {
+    lengthStream$1.point = lengthPointFirst$1;
+  },
+  lineEnd: function() {
+    if (lengthRing) lengthPoint$1(x00$2, y00$2);
+    lengthStream$1.point = noop$1;
+  },
+  polygonStart: function() {
+    lengthRing = true;
+  },
+  polygonEnd: function() {
+    lengthRing = null;
+  },
+  result: function() {
+    var length = +lengthSum$1;
+    lengthSum$1.reset();
+    return length;
+  }
+};
+
+function lengthPointFirst$1(x, y) {
+  lengthStream$1.point = lengthPoint$1;
+  x00$2 = x0$4 = x, y00$2 = y0$4 = y;
+}
+
+function lengthPoint$1(x, y) {
+  x0$4 -= x, y0$4 -= y;
+  lengthSum$1.add(sqrt(x0$4 * x0$4 + y0$4 * y0$4));
+  x0$4 = x, y0$4 = y;
+}
+
 function PathString() {
   this._string = [];
 }
@@ -8125,6 +8167,11 @@ var index$1 = function(projection, context) {
   path.area = function(object) {
     geoStream(object, projectionStream(areaStream$1));
     return areaStream$1.result();
+  };
+
+  path.measure = function(object) {
+    geoStream(object, projectionStream(lengthStream$1));
+    return lengthStream$1.result();
   };
 
   path.bounds = function(object) {
@@ -9754,9 +9801,12 @@ function distance1(a, b) {
   return l - b._.r;
 }
 
-function distance2(circle, x, y) {
-  var dx = circle.x - x,
-      dy = circle.y - y;
+function distance2(node, x, y) {
+  var a = node._,
+      b = node.next._,
+      ab = a.r + b.r,
+      dx = (a.x * b.r + b.x * a.r) / ab - x,
+      dy = (a.y * b.r + b.y * a.r) / ab - y;
   return dx * dx + dy * dy;
 }
 
@@ -9831,10 +9881,10 @@ function packEnclose(circles) {
     ox += ca * c._.x;
     oy += ca * c._.y;
 
-    // Compute the new closest circle a to centroid.
-    aa = distance2(a._, cx = ox / oa, cy = oy / oa);
+    // Compute the new closest circle pair to the centroid.
+    aa = distance2(a, cx = ox / oa, cy = oy / oa);
     while ((c = c.next) !== b) {
-      if ((ca = distance2(c._, cx, cy)) < aa) {
+      if ((ca = distance2(c, cx, cy)) < aa) {
         a = c, aa = ca;
       }
     }
@@ -24660,7 +24710,7 @@ var _metricsGraphics = require('metrics-graphics');
 
 var _metricsGraphics2 = _interopRequireDefault(_metricsGraphics);
 
-var MG_ALLOWED_OPTIONS = ['axes_not_compact', 'european_clock', 'inflator', 'max_x', 'max_y', 'min_x', 'min_y', 'min_y_from_data', 'missing_text', 'show_missing_background', 'show_year_markers', 'show_years', 'show_secondary_x_label', 'small_text', 'xax_count', 'xax_format', 'x_axis', 'x_extended_ticks', 'x_label', 'x_scale_type', 'xax_start_at_min', 'xax_tick_length', 'xax_units', 'y_axis', 'y_extended_ticks', 'y_label', 'y_scale_type', 'yax_count', 'yax_format', 'yax_tick_length', 'yax_units', 'yax_units_append', 'aggregate_rollover', 'animate_on_load', 'area', 'baselines', 'chart_type', 'custom_line_color_map', 'decimals', 'error', 'format', 'full_height', 'full_width', 'interpolate', 'interpolate_tension', 'legend', 'legend_target', 'linked', 'linked_format', 'list', 'markers', 'max_data_size', 'mouseover', 'mousemove', 'mouseout', 'point_size', 'rollover_callback', 'show_confidence_band', 'show_rollover_text', 'show_tooltips', 'target', 'transition_on_update', 'x_rollover_format', 'x_rug', 'y_rollover_format', 'y_rug', 'data', 'missing_is_zero', 'missing_is_hidden', 'missing_is_hidden_accessor', 'utc_time', 'x_accessor', 'x_sort', 'y_accessor', 'buffer', 'bottom', 'center_title_full_width', 'height', 'left', 'right', 'small_height_threshold', 'small_width_threshold', 'top', 'width', 'color_accessor', 'color_range', 'color_type', 'point_size', 'size_accessor', 'size_range', 'lowess', 'ls', 'bar_margin', 'binned', 'bins', 'bar_height', 'bar_orientation', 'baseline_accessor', 'binned', 'dodge_accessor', 'outer_padding_percentage', 'padding_percentage', 'predictor_accessor', 'truncate_x_labels', 'truncate_y_labels', 'rotate_x_labels', 'rotate_y_labels'];
+var MG_ALLOWED_OPTIONS = ['axes_not_compact', 'european_clock', 'inflator', 'max_x', 'max_y', 'min_x', 'min_y', 'min_y_from_data', 'missing_text', 'show_missing_background', 'show_year_markers', 'show_years', 'show_secondary_x_label', 'small_text', 'xax_count', 'xax_format', 'x_axis', 'x_extended_ticks', 'x_label', 'x_scale_type', 'xax_start_at_min', 'xax_tick_length', 'xax_units', 'y_axis', 'y_extended_ticks', 'y_label', 'y_scale_type', 'yax_count', 'yax_format', 'yax_tick_length', 'yax_units', 'yax_units_append', 'aggregate_rollover', 'animate_on_load', 'area', 'baselines', 'chart_type', 'custom_line_color_map', 'decimals', 'error', 'format', 'full_height', 'full_width', 'interpolate', 'interpolate_tension', 'legend', 'legend_target', 'linked', 'linked_format', 'list', 'markers', 'max_data_size', 'mouseover', 'mousemove', 'mouseout', 'point_size', 'rollover_callback', 'show_confidence_band', 'show_rollover_text', 'show_tooltips', 'target', 'transition_on_update', 'x_rollover_format', 'x_rug', 'y_rollover_format', 'y_rug', 'data', 'missing_is_zero', 'missing_is_hidden', 'missing_is_hidden_accessor', 'utc_time', 'x_accessor', 'x_sort', 'y_accessor', 'buffer', 'bottom', 'center_title_full_width', 'height', 'left', 'right', 'small_height_threshold', 'small_width_threshold', 'top', 'width', 'color_accessor', 'color_range', 'color_type', 'point_size', 'size_accessor', 'size_range', 'lowess', 'ls', 'bar_margin', 'binned', 'bins', 'bar_height', 'bar_orientation', 'baseline_accessor', 'binned', 'dodge_accessor', 'outer_padding_percentage', 'padding_percentage', 'predictor_accessor', 'truncate_x_labels', 'truncate_y_labels', 'rotate_x_labels', 'rotate_y_labels', 'title', 'description', 'colors', 'y_mouseover', 'x_mouseover'];
 function getMGOptions(props) {
 	var mgOptions = {},
 	    x,
@@ -24832,9 +24882,14 @@ MetricsGraphics.propTypes = {
 	yax_format: _react2['default'].PropTypes.any, //a function that formats the y-axis' labels
 	yax_tick_length: _react2['default'].PropTypes.any, //the y-axis' tick length in pixels
 	yax_units: _react2['default'].PropTypes.any, //a prefix symbol to be shown alongside the y-axis' labels
-	yax_units_append: _react2['default'].PropTypes.any };
+	yax_units_append: _react2['default'].PropTypes.any, //determines whether to append rather than prepend units
+	title: _react2['default'].PropTypes.any, // title of the graphic
+	description: _react2['default'].PropTypes.any, // description of the graphic, shown on hover over of the title
+	colors: _react2['default'].PropTypes.any, //custom array of colors
+	y_mouseover: _react2['default'].PropTypes.any, //custom rollover function
+	x_mouseover: _react2['default'].PropTypes.any };
 module.exports = exports['default'];
-//determines whether to append rather than prepend units
+//custom rollover function
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"metrics-graphics":2}]},{},[3])(3)
