@@ -1,7 +1,7 @@
 import React from 'react';
 import MG from 'metrics-graphics';
 
-const MG_ALLOWED_OPTIONS=['axes_not_compact', 'european_clock', 'inflator', 'max_x', 'max_y', 'min_x', 'min_y', 'min_y_from_data', 'missing_text', 'show_missing_background', 'show_year_markers', 'show_years', 'show_secondary_x_label', 'small_text', 'xax_count', 'xax_format', 'x_axis', 'x_extended_ticks', 'x_label', 'x_scale_type', 'xax_start_at_min', 'xax_tick_length', 'xax_units', 'y_axis', 'y_extended_ticks', 'y_label', 'y_scale_type', 'yax_count', 'yax_format', 'yax_tick_length', 'yax_units', 'yax_units_append', 'aggregate_rollover', 'animate_on_load', 'area', 'baselines', 'chart_type', 'custom_line_color_map', 'decimals', 'error', 'format', 'full_height', 'full_width', 'interpolate', 'interpolate_tension', 'legend', 'legend_target', 'linked', 'linked_format', 'list', 'markers', 'max_data_size', 'mouseover', 'mousemove', 'mouseout', 'point_size', 'rollover_callback', 'show_confidence_band', 'show_rollover_text', 'show_tooltips', 'target', 'transition_on_update', 'x_rollover_format', 'x_rug', 'y_rollover_format', 'y_rug', 'data', 'missing_is_zero', 'missing_is_hidden', 'missing_is_hidden_accessor', 'utc_time', 'x_accessor', 'x_sort', 'y_accessor', 'buffer', 'bottom', 'center_title_full_width', 'height', 'left', 'right', 'small_height_threshold', 'small_width_threshold', 'top', 'width', 'color_accessor', 'color_range', 'color_type', 'point_size', 'size_accessor', 'size_range', 'lowess', 'ls', 'bar_margin', 'binned', 'bins', 'bar_height', 'bar_orientation', 'baseline_accessor', 'binned', 'dodge_accessor', 'outer_padding_percentage', 'padding_percentage', 'predictor_accessor', 'truncate_x_labels', 'truncate_y_labels', 'rotate_x_labels', 'rotate_y_labels'];
+const MG_ALLOWED_OPTIONS=['title', 'description', 'axes_not_compact', 'european_clock', 'inflator', 'max_x', 'max_y', 'min_x', 'min_y', 'min_y_from_data', 'missing_text', 'show_missing_background', 'show_year_markers', 'show_years', 'show_secondary_x_label', 'small_text', 'xax_count', 'xax_format', 'x_axis', 'x_extended_ticks', 'x_label', 'x_scale_type', 'xax_start_at_min', 'xax_tick_length', 'xax_units', 'y_axis', 'y_extended_ticks', 'y_label', 'y_scale_type', 'yax_count', 'yax_format', 'yax_tick_length', 'yax_units', 'yax_units_append', 'aggregate_rollover', 'animate_on_load', 'area', 'baselines', 'chart_type', 'custom_line_color_map', 'decimals', 'error', 'format', 'full_height', 'full_width', 'interpolate', 'interpolate_tension', 'legend', 'legend_target', 'linked', 'linked_format', 'list', 'markers', 'max_data_size', 'mouseover', 'mousemove', 'mouseout', 'point_size', 'rollover_callback', 'show_confidence_band', 'show_rollover_text', 'show_tooltips', 'target', 'transition_on_update', 'x_rollover_format', 'x_rug', 'y_rollover_format', 'y_rug', 'data', 'missing_is_zero', 'missing_is_hidden', 'missing_is_hidden_accessor', 'utc_time', 'x_accessor', 'x_sort', 'y_accessor', 'buffer', 'bottom', 'center_title_full_width', 'height', 'left', 'right', 'small_height_threshold', 'small_width_threshold', 'top', 'width', 'color_accessor', 'color_range', 'color_type', 'point_size', 'size_accessor', 'size_range', 'lowess', 'ls', 'bar_margin', 'binned', 'bins', 'bar_height', 'bar_orientation', 'baseline_accessor', 'binned', 'dodge_accessor', 'outer_padding_percentage', 'padding_percentage', 'predictor_accessor', 'truncate_x_labels', 'truncate_y_labels', 'rotate_x_labels', 'rotate_y_labels'];
 function getMGOptions(props){
 	var mgOptions={},x,p;
 	for(x=MG_ALLOWED_OPTIONS.length-1;x>=0;x--){
@@ -72,6 +72,7 @@ MetricsGraphics.propTypes={
 	custom_line_color_map:React.PropTypes.any, //maps an arbitrary set of lines to colors
 	data:React.PropTypes.any, //the data object
 	decimals:React.PropTypes.any, //the number of decimals to show in a rollover
+	description: React.PropTypes.any, // description of the graphic, shown on hover over of the title
 	dodge_accessor:React.PropTypes.any, //the data element to map the dodge component to
 	error:React.PropTypes.any, //does the graphic have an error that we want to communicate to users
 	european_clock:React.PropTypes.any, //determines whether to show labels using a 24-hour clock
@@ -126,6 +127,7 @@ MetricsGraphics.propTypes={
 	small_text:React.PropTypes.any, //coerces small text regardless of graphic size
 	small_width_threshold:React.PropTypes.any, //maximum width for a small graphic
 	target:React.PropTypes.any, //the DOM element to insert the graphic in
+	title: React.PropTypes.any, // title of the graphic
 	top:React.PropTypes.any, //the size of the top margin
 	transition_on_update:React.PropTypes.any, //gracefully transitions the lines on data change
 	truncate_x_labels:React.PropTypes.any, //truncate_x_labels

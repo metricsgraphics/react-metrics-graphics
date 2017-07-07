@@ -154,6 +154,8 @@ import MetricsGraphics from 'react-metrics-graphics';
 * truncate_y_labels
 * rotate_x_labels - The number of degrees to rotate the x-axis' labels.
 * rotate_y_labels - The number of degrees to rotate the y-axis' labels.
+* title - title of the graphic
+* description - description of the graphic, shown on hover over of the title
 
 ### Notes
 Make sure to include the MetricsGraphics css file in your react app:
