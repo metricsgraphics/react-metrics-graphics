@@ -1,17 +1,17 @@
 {
   "name": "react-metrics-graphics",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A react component thats wraps the popular visualization library, MetricsGraphics.js",
   "main": "lib/MetricsGraphics.js",
   "author": "Carter Feldman",
-  "homepage": "https://github.com/cf/react-metrics-graphics",
+  "homepage": "https://github.com/wlach/react-metrics-graphics",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cf/react-metrics-graphics.git"
+    "url": "https://github.com/wlach/react-metrics-graphics.git"
   },
   "bugs": {
-    "url": "https://github.com/cf/react-metrics-graphics/issues"
+    "url": "https://github.com/wlach/react-metrics-graphics/issues"
   },
   "dependencies": {
     "classnames": "^2.1.2",
