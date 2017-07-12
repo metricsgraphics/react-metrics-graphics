@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "classnames": "^2.1.2",
-    "jquery": "^3.1.0",
     "metrics-graphics": "^2.11.0"
   },
   "devDependencies": {
