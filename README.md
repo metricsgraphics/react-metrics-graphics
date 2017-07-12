@@ -7,7 +7,7 @@ __A react component thats wraps the popular visualization library, [MetricsGraph
 
 ## Demo & Examples
 
-Live demo: [cf.github.io/react-metrics-graphics](http://cf.github.io/react-metrics-graphics/)
+Live demo: [mozilla.github.io/react-metrics-graphics](http://cf.github.io/react-metrics-graphics/)
 
 
 ## Installation
