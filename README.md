@@ -2,12 +2,12 @@
 
 __A react component thats wraps the popular visualization library, [MetricsGraphics.js](https://github.com/mozilla/metrics-graphics)__
 
-[![npm](https://img.shields.io/npm/l/react-metrics-graphics.svg?maxAge=2592000&rt=4)](https://github.com/cf/react-metrics-graphics)
+[![npm](https://img.shields.io/npm/l/react-metrics-graphics.svg?maxAge=2592000&rt=4)](https://github.com/mozilla/react-metrics-graphics)
 [![npm](https://img.shields.io/npm/v/react-metrics-graphics.svg?maxAge=2592000&rt=4)](https://www.npmjs.com/package/react-metrics-graphics)
 
 ## Demo & Examples
 
-Live demo: [mozilla.github.io/react-metrics-graphics](http://cf.github.io/react-metrics-graphics/)
+Live demo: [mozilla.github.io/react-metrics-graphics](http://mozilla.github.io/react-metrics-graphics/)
 
 
 ## Installation
