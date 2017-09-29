@@ -15,7 +15,6 @@ var taskConfig = {
 	component: {
 		name: 'MetricsGraphics',
 		dependencies: [
-			'classnames',
 			'react',
 			'react-dom'
 		],
