@@ -22,6 +22,9 @@
     "eslint-plugin-react": "^3.5.1",
     "gulp": "^3.9.0",
     "react-component-gulp-tasks": "^0.7.6",
+    "react": "^16.0.0",
+    "react-dom": "v16.0.0"
+
   },
   "peerDependencies": {
     "react": "^16.0.0-0"
