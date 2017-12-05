@@ -20,6 +20,7 @@ const MG_ALLOWED_OPTIONS = [
     'color_accessor',
     'color_range',
     'color_type',
+    'colors',
     'custom_line_color_map',
     'data',
     'decimals',
