@@ -1,5 +1,6 @@
 import React from 'react';
 import MG from 'metrics-graphics';
+import 'metrics-graphics/dist/metricsgraphics.css';
 
 const MG_ALLOWED_OPTIONS = [
     'aggregate_rollover',
@@ -156,7 +157,7 @@ export default class MetricsGraphics extends React.Component {
 	render(){
 		const _this=this;
 		return(
-			<div className="metricsGraphicsCon" ref={ (c) =>{ if(c!=null) _this.mgData.target=c; } }></div>
+			<div className="metricsGraphicsCon" ref={ (c) =>{ if(c!=null) _this.mgData.target=c; } } />
 		);
 	}
 }
