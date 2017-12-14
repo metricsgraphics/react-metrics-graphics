@@ -1,8 +1,8 @@
 {
   "name": "react-metrics-graphics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react component thats wraps the popular visualization library, MetricsGraphics.js",
-  "main": "lib/MetricsGraphics.js",
+  "main": "build/MetricsGraphics.js",
   "author": "Carter Feldman",
   "homepage": "https://github.com/mozilla/react-metrics-graphics",
   "license": "MIT",
