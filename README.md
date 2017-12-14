@@ -156,12 +156,6 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * yax_units - a prefix symbol to be shown alongside the y-axis' labels
 * yax_units_append - determines whether to append rather than prepend units
 
-### Notes
-Make sure to include the MetricsGraphics css file in your react app:
-```
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.11.0/metricsgraphics.min.css">
-```
-
 ## Development
 
 To build the example locally, run:
