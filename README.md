@@ -12,19 +12,18 @@ Live demo: [mozilla.github.io/react-metrics-graphics](http://mozilla.github.io/r
 
 ## Installation
 
-The easiest way to use react-metrics-graphics is to install it from NPM and include it in your own React build process (using [Browserify](http://browserify.org), [Webpack](http://webpack.github.io/), etc).
+The currently supported path to using `react-metrics-graphics` is as a dependency that you then compile into your application
+via the React build process (using [Browserify](http://browserify.org), [Webpack](http://webpack.github.io/), etc).
 
+Via npm:
 ```
 npm install react-metrics-graphics --save
 ```
 
-You can also use the standalone build by including `dist/react-metrics-graphics.js` in your page. If you use this, make sure you have already included React, and it is available as a global variable.
-
-
-__Also ensure to include the standard MetricsGraphics.js stylesheet to the head of your HTML doc__
-```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.11.0/metricsgraphics.min.css">
-``` 
+Via yarn:
+```
+yarn add react-metrics-graphics
+```
 
 ## Usage
 
@@ -32,6 +31,7 @@ __Simply add the react component MetricsGraphics, and pass it any number of the 
 
 ```jsx
 import MetricsGraphics from 'react-metrics-graphics';
+import 'metrics-graphics/dist/metricsgraphics.css';
 
 <MetricsGraphics
 	title="Downloads"
@@ -43,7 +43,6 @@ import MetricsGraphics from 'react-metrics-graphics';
 	y_accessor="value"
 />
 ```
-
 
 ### Properties
 
@@ -161,29 +160,24 @@ import MetricsGraphics from 'react-metrics-graphics';
 Make sure to include the MetricsGraphics css file in your react app:
 ```
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.11.0/metricsgraphics.min.css">
-``` 
-
-## Demo & Examples
-
-To build the examples locally, run:
-
-```bash
-npm install
-npm start
 ```
 
-Then open [`localhost:8000`](http://localhost:8000) in a browser.
+## Development
 
-## Development (`src`, `lib` and the build process)
+To build the example locally, run:
 
-**NOTE:** The source code for the component is in `src`. A transpiled CommonJS version (generated with Babel) is available in `lib` for use with node.js, browserify and webpack. A UMD bundle is also built to `dist`, which can be included without the need for any build system.
+```bash
+yarn install
+yarn start
+```
 
-To build, watch and serve the examples (which will also watch the component source), run `npm start`. If you just want to watch changes to `src` and rebuild `lib`, run `npm run watch` (this is useful if you are working with `npm link`).
+Then open [`localhost:5000`](http://localhost:5000) in a browser.
 
 ## License
 
 The MIT License (MIT)
 Copyright (c) 2016 Carter Feldman, http://carter.at/
+Copyright (c) 2017 Mozilla
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
