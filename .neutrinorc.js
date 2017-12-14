@@ -24,7 +24,7 @@ module.exports = {
 					'react/no-did-update-set-state': 'warn',
 					'react/no-multi-comp': 'warn',
 					'react/no-unknown-property': 'warn',
-					'react/prop-types': 'warn',
+					'react/prop-types': ['warn', {'ignore': 'xax_format'}],
 					'react/react-in-jsx-scope': 'warn',
 					'react/self-closing-comp': 'warn',
 					'react/jsx-wrap-multilines': 'warn',
