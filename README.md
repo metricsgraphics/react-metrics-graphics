@@ -4,6 +4,7 @@ __A react component thats wraps the popular visualization library, [MetricsGraph
 
 [![npm](https://img.shields.io/npm/l/react-metrics-graphics.svg?maxAge=2592000&rt=4)](https://github.com/mozilla/react-metrics-graphics)
 [![npm](https://img.shields.io/npm/v/react-metrics-graphics.svg?maxAge=2592000&rt=4)](https://www.npmjs.com/package/react-metrics-graphics)
+[![Build Status](https://travis-ci.org/mozilla/react-metrics-graphics.png?branch=master)](https://travis-ci.org/mozilla/react-metrics-graphics)
 
 ## Demo & Examples
 
