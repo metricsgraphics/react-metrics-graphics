@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import MG from 'metrics-graphics';
 import 'metrics-graphics/dist/metricsgraphics.css';
@@ -164,6 +165,6 @@ export default class MetricsGraphics extends React.Component {
 
 MetricsGraphics.propTypes = MG_ALLOWED_OPTIONS.reduce(
     function(obj, propertyName) {
-        obj[propertyName] = React.PropTypes.any;
+        obj[propertyName] = PropTypes.any;
         return obj;
     }, {});
