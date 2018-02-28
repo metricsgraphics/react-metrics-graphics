@@ -1,6 +1,6 @@
 {
   "name": "react-metrics-graphics",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A react component thats wraps the popular visualization library, MetricsGraphics.js",
   "main": "build/MetricsGraphics.js",
   "author": "Carter Feldman",
