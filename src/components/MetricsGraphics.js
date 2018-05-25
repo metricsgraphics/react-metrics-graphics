@@ -66,6 +66,7 @@ const MG_ALLOWED_OPTIONS = [
     'predictor_accessor',
     'right',
     'rollover_callback',
+    'rollover_time_format',
     'rotate_x_labels',
     'rotate_y_labels',
     'show_confidence_band',
