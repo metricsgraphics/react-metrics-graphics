@@ -20,6 +20,8 @@ node_modules
 build
 
 # Editor and other tmp files
+*~
+\#*
 *.swp
 *.un~
 *.iml
