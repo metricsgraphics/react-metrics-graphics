@@ -118,16 +118,13 @@ const MG_ALLOWED_OPTIONS = [
     'yax_units_append',
 ];
 
-function getMGOptions(props){
-  var mgOptions={},x,p;
-  for(x=MG_ALLOWED_OPTIONS.length-1;x>=0;x--){
-    p=MG_ALLOWED_OPTIONS[x];
-    if(props.hasOwnProperty(p)){
-      mgOptions[p]=props[p];
-    }
-  }
-  return mgOptions;
-}
+const getMGOptions = (props) => MG_ALLOWED_OPTIONS.reduce(
+  (mgOptions, propertyName) =>
+    props.hasOwnProperty(propertyName) ? {
+      [propertyName]: props[propertyName],
+      ...mgOptions
+    } : mgOptions,
+  {});
 
 export default class MetricsGraphics extends React.Component {
 
