@@ -1,5 +1,15 @@
 language: node_js
-node_js: "6.11.1"
+node_js: 6.11.1
 script:
-  - npm run lint
-  - npm run build
+- npm run lint
+- npm run build
+deploy:
+  matrix:
+  - provider: npm
+    email: wrlach@gmail.com
+    skip-cleanup: true
+    on:
+      tags: true
+      repo: metricsgraphics/metrics-graphics
+    api_key:
+      secure: ubFUinUfz3shPZ2T0EhhUW/s9ELuEGQt04oUjio3gXOYcA91u1nZfl5270qoql2SRRSyCe+nWkp5EAeVOqF82ToFU+pF1Kmj7pIlKKy/6yhd1FGkQHYAbi+BvQ6vA/9hU9uvI3pmyEULFoUKDDSFi2xE3TkJOikEr+OCIpUxIjcs2Qk8FzkWMrQZ2yOWNR8RbMtEZuCSlrdL7Iw8AkCBAySvv1kSV3NU9uJjdlI4PI3AnFDRp8LxdXbn0G5lIdXtbuZSiSc3iWnorWoNqjHX27OlTrm9hl6H9EIdEtjIlPlZeB5YjVjIF9yhrNzMXxN4CxEx7HQJnMIA8RUALiv6g9VmVzR+yc0j6BfbUaNhok7X4MOFXAillUzRpMpUTDrqz0CtyeJx4TiHt8MLtn2SwHlmWYPq3BoYsp9D3q1zz2AwA5dPPlsm51d5yfRyHe23KfRPRtbzkwx2HGNM371cLh9AInYh7xH/naDW/xQ2jEzBr8rlkAelePQcanRk/HPcGqf3eIkR81B3wDTSjrq03psvERjLLw9TcofqeNh4LVQaZZi4ZtFv2Q0DlXuHPFLBDSEHU43aFNpFvWVVog3ii/eCRG9ON1le2QK5fP9WS4lXKLLaWgN6+gEp/xl6aZ3YZb6X6csXW++V9uw1Ain/JqLF0bBpXccfSntTRAmgQ3M=
