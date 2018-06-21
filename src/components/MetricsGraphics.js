@@ -130,6 +130,15 @@ function getMGOptions(props){
 }
 
 export default class MetricsGraphics extends React.Component {
+
+  static propTypes = MG_ALLOWED_OPTIONS.reduce(
+    (obj, propertyName) => ({
+        [propertyName]: PropTypes.any,
+        ...obj
+      }),
+      {}
+    );
+
   constructor(props){
     super(props);
     this.mgData={};
@@ -163,9 +172,3 @@ export default class MetricsGraphics extends React.Component {
     );
   }
 }
-
-MetricsGraphics.propTypes = MG_ALLOWED_OPTIONS.reduce(
-    function(obj, propertyName) {
-        obj[propertyName] = PropTypes.any;
-        return obj;
-    }, {});
