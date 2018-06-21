@@ -1,14 +1,14 @@
 # MetricsGraphics React Component
 
-__A react component thats wraps the popular visualization library, [MetricsGraphics.js](https://github.com/mozilla/metrics-graphics)__
+__A react component thats wraps the popular visualization library, [MetricsGraphics.js](https://github.com/metricsgraphics/metrics-graphics)__
 
-[![npm](https://img.shields.io/npm/l/react-metrics-graphics.svg?maxAge=2592000&rt=4)](https://github.com/mozilla/react-metrics-graphics)
+[![npm](https://img.shields.io/npm/l/react-metrics-graphics.svg?maxAge=2592000&rt=4)](https://github.com/metricsgraphics/react-metrics-graphics)
 [![npm](https://img.shields.io/npm/v/react-metrics-graphics.svg?maxAge=2592000&rt=4)](https://www.npmjs.com/package/react-metrics-graphics)
-[![Build Status](https://travis-ci.org/mozilla/react-metrics-graphics.png?branch=master)](https://travis-ci.org/mozilla/react-metrics-graphics)
+[![Build Status](https://travis-ci.org/mozilla/react-metrics-graphics.png?branch=master)](https://travis-ci.org/metricsgraphics/react-metrics-graphics)
 
 ## Demo & Examples
 
-Live demo: [mozilla.github.io/react-metrics-graphics](http://mozilla.github.io/react-metrics-graphics/)
+Live demo: [metricsgraphics.github.io/react-metrics-graphics](http://metricsgraphics.github.io/react-metrics-graphics/)
 
 
 ## Installation
@@ -28,7 +28,7 @@ yarn add react-metrics-graphics
 
 ## Usage
 
-__Simply add the react component MetricsGraphics, and pass it any number of the [standard MetricGraphics.js options](https://github.com/mozilla/metrics-graphics/wiki/List-of-Options/80e9459ecb80f001ccbaec5cc58e7ca37a8851cc) as component attributes__
+__Simply add the react component MetricsGraphics, and pass it any number of the [standard MetricGraphics.js options](https://github.com/metricsgraphics/metrics-graphics/wiki/List-of-Options/80e9459ecb80f001ccbaec5cc58e7ca37a8851cc) as component attributes__
 
 ```jsx
 import MetricsGraphics from 'react-metrics-graphics';
@@ -172,7 +172,7 @@ Then open [`localhost:5000`](http://localhost:5000) in a browser.
 
 The MIT License (MIT)
 Copyright (c) 2016 Carter Feldman, http://carter.at/
-Copyright (c) 2017 Mozilla
+Copyright (c) 2017-2018 Mozilla
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
