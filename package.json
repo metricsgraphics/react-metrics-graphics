@@ -18,9 +18,9 @@
   ],
   "peerDependencies": {
     "metrics-graphics": "^2.11.0",
-    "prop-types": "^15.6.0",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "prop-types": "^15||^16",
+    "react": "^15||^16",
+    "react-dom": "^15||^16"
   },
   "devDependencies": {
     "@neutrinojs/eslint": "^8.0.12",
