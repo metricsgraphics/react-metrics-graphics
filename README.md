@@ -168,6 +168,13 @@ yarn start
 
 Then open [`localhost:5000`](http://localhost:5000) in a browser.
 
+## Making a release
+
+We have [configured travis](https://docs.travis-ci.com/user/deployment/npm/) to
+automatically upload a new version to npm when it sees a new tag in the appropriate
+format. Use [npm version](https://docs.npmjs.com/cli/version) to update `package.json`
+and create the tag, then push to master.
+
 ## License
 
 The MIT License (MIT)
