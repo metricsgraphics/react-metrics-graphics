@@ -23,6 +23,7 @@
     "react-dom": "^15||^16"
   },
   "devDependencies": {
+    "@neutrinojs/airbnb": "^8.2.3",
     "@neutrinojs/eslint": "^8.0.12",
     "@neutrinojs/react-components": "^8.0.11",
     "bootstrap": "^3.3.7",
