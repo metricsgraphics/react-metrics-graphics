@@ -16,6 +16,8 @@ const MG_ALLOWED_OPTIONS = [
   'binned',
   'bins',
   'bottom',
+  'brush',
+  'brushing_selection_changed',
   'buffer',
   'center_title_full_width',
   'chart_type',
@@ -116,6 +118,7 @@ const MG_ALLOWED_OPTIONS = [
   'yax_tick_length',
   'yax_units',
   'yax_units_append',
+  'zoom_target',
 ];
 
 const getMGOptions = props => MG_ALLOWED_OPTIONS.reduce(

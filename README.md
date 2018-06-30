@@ -60,6 +60,8 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * binned - specifies whether the histogram data is already binned
 * bins - the number of bins to use
 * bottom - the size of the bottom margin
+* brush - add brush function
+* brushing_selection_changed - the zooming target of brushing function
 * buffer - the padding around the graphic
 * center_title_full_width - center title over entire graph
 * chart_type - {line, histogram, point, missing-data}
@@ -156,6 +158,7 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * yax_tick_length - the y-axis' tick length in pixels
 * yax_units - a prefix symbol to be shown alongside the y-axis' labels
 * yax_units_append - determines whether to append rather than prepend units
+* zoom_target - the zooming target of brushing function
 
 ## Development
 
