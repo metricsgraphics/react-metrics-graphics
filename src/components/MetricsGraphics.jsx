@@ -21,6 +21,7 @@ const MG_ALLOWED_OPTIONS = [
   'buffer',
   'center_title_full_width',
   'chart_type',
+  'click',
   'color_accessor',
   'color_range',
   'color_type',

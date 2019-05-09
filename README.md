@@ -65,6 +65,7 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * buffer - the padding around the graphic
 * center_title_full_width - center title over entire graph
 * chart_type - {line, histogram, point, missing-data}
+* click - custom rollover function
 * color_accessor - the data element to use to map points to colors
 * color_range - the range used to color different groups of points
 * color_type - specifies whether the color scale is quantitative or qualitative
