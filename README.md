@@ -76,6 +76,7 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * dodge_accessor - the data element to map the dodge component to
 * error - does the graphic have an error that we want to communicate to users
 * european_clock - determines whether to show labels using a 24-hour clock
+* flip_area_under_y_value - specifies a Y baseline number value to flip area under it
 * format - the format of the data object (count or percentage)
 * full_height - sets height to that of the parent, adjusts dimensions on window resize
 * full_width - sets width to that of the parent, adjusts dimensions on window resize

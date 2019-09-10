@@ -34,6 +34,7 @@ const MG_ALLOWED_OPTIONS = [
   'error',
   'european_clock',
   'format',
+  'flip_area_under_y_value',
   'full_height',
   'full_width',
   'height',
