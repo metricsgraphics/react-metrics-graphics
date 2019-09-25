@@ -56,7 +56,6 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * bar_orientation - determines whether to show a vertical or horizontal barplot
 * baseline_accessor - the data element to map the baseline component to
 * baselines - horizontal lines that indicate, say, goals.
-* binned - determines whether the data is already binned
 * binned - specifies whether the histogram data is already binned
 * bins - the number of bins to use
 * bottom - the size of the bottom margin
