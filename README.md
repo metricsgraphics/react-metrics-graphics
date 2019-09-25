@@ -51,7 +51,6 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * animate_on_load - determines whether lines are transitioned on first-load
 * area - determines whether to fill the area below the line
 * axes_not_compact - determines whether to draw compact or non-compact axes
-* bar_height - bar height in pixels
 * bar_margin - the margin between bars
 * bar_orientation - determines whether to show a vertical or horizontal barplot
 * baseline_accessor - the data element to map the baseline component to
@@ -72,7 +71,6 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * data - the data object
 * decimals - the number of decimals to show in a rollover
 * description - description of the graphic, shown on hover over of the title
-* dodge_accessor - the data element to map the dodge component to
 * error - does the graphic have an error that we want to communicate to users
 * european_clock - determines whether to show labels using a 24-hour clock
 * flip_area_under_y_value - specifies a Y baseline number value to flip area under it
