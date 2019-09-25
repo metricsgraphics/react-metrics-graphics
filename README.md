@@ -87,8 +87,8 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * linked - used to link multiple graphics together
 * linked_format - specifies the format of linked rollovers
 * list - automatically maps the data to x and y accessors
-* lowess - specifies whether to show a lowess line of best-fit
-* ls - specifies whether to show a least-squares line of best-fit
+* lowess_line - specifies whether to show a lowess line of best-fit
+* ls_line - specifies whether to show a least-squares line of best-fit
 * markers - vertical lines that indicate, say, milestones
 * max_data_size - for use with custom_line_color_map
 * max_x - the maximum x-value
