@@ -51,12 +51,10 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * animate_on_load - determines whether lines are transitioned on first-load
 * area - determines whether to fill the area below the line
 * axes_not_compact - determines whether to draw compact or non-compact axes
-* bar_height - bar height in pixels
 * bar_margin - the margin between bars
 * bar_orientation - determines whether to show a vertical or horizontal barplot
 * baseline_accessor - the data element to map the baseline component to
 * baselines - horizontal lines that indicate, say, goals.
-* binned - determines whether the data is already binned
 * binned - specifies whether the histogram data is already binned
 * bins - the number of bins to use
 * bottom - the size of the bottom margin
@@ -73,9 +71,9 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * data - the data object
 * decimals - the number of decimals to show in a rollover
 * description - description of the graphic, shown on hover over of the title
-* dodge_accessor - the data element to map the dodge component to
 * error - does the graphic have an error that we want to communicate to users
 * european_clock - determines whether to show labels using a 24-hour clock
+* flip_area_under_y_value - specifies a Y baseline number value to flip area under it
 * format - the format of the data object (count or percentage)
 * full_height - sets height to that of the parent, adjusts dimensions on window resize
 * full_width - sets width to that of the parent, adjusts dimensions on window resize
@@ -89,8 +87,8 @@ import 'metrics-graphics/dist/metricsgraphics.css';
 * linked - used to link multiple graphics together
 * linked_format - specifies the format of linked rollovers
 * list - automatically maps the data to x and y accessors
-* lowess - specifies whether to show a lowess line of best-fit
-* ls - specifies whether to show a least-squares line of best-fit
+* lowess_line - specifies whether to show a lowess line of best-fit
+* ls_line - specifies whether to show a least-squares line of best-fit
 * markers - vertical lines that indicate, say, milestones
 * max_data_size - for use with custom_line_color_map
 * max_x - the maximum x-value
