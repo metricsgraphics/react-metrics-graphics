@@ -19,8 +19,8 @@
   "peerDependencies": {
     "metrics-graphics": "^2.11.0",
     "prop-types": "^15||^16",
-    "react": "^15||^16",
-    "react-dom": "^15||^16"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@neutrinojs/airbnb": "^8.2.3",
@@ -32,8 +32,8 @@
     "jquery": "^3.2.1",
     "metrics-graphics": "^2.13.0",
     "neutrino": "^8.0.11",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "scripts": {
     "start": "neutrino start",
